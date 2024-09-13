@@ -2,6 +2,8 @@
 
 ![Vantage Controls Logo](icons/icon.svg)
 
+**⚠️ **Note: Vantage Controls is currently under development and is not functional at this time. Check back later for updates.** ⚠️**
+
 ### A GNOME Shell Extension
 
 **Vantage Controls** is a GNOME Shell extension inspired by the Lenovo Vantage Toolbar on Windows. It provides users with seamless control over various system settings within the GNOME environment, blending these controls into GNOME's design.
