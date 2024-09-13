@@ -1,0 +1,13 @@
+{
+  "uuid": "vantage-controls@oezturk.github.io",
+  "name": "Vantage Controls",
+  "description": "Vantage-like Lenovo(Ideapad) Controls for GNOME Shell with easy quick settings toggles.",
+  "version": 0,
+  "shell-version": [
+    "43",
+    "44",
+    "45",
+    "46",
+    "47"
+  ]
+}
