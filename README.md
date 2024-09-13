@@ -1,6 +1,6 @@
 # Vantage Controls
 
-![Vantage Controls Logo](icons/icon.svg)
+![Vantage Controls Logo](icons/qs-icon.svg)
 
 **⚠️ **Note: Vantage Controls is currently under development and is not functional at this time. Check back later for updates.** ⚠️**
 
