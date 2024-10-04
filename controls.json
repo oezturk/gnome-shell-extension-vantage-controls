@@ -1,0 +1,22 @@
+{
+    "controls": {
+        "usb_charging": {
+            "titleKey": "USB Charging",
+            "path": "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/usb_charging",
+            "icon": "drive-harddisk-usb-symbolic",
+            "indicator": true
+        },
+        "fn_lock": {
+            "titleKey": "Fn Lock",
+            "path": "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/fn_lock",
+            "icon": "input-keyboard-symbolic",
+            "indicator": false
+        },
+        "conservation_mode": {
+            "titleKey": "Conservation",
+            "path": "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode",
+            "icon": "emoji-nature-symbolic",
+            "indicator": true
+        }
+    }
+}

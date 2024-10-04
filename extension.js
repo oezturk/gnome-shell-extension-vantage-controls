@@ -24,26 +24,26 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
 import { QuickToggle, SystemIndicator } from 'resource:///org/gnome/shell/ui/quickSettings.js';
 
-const CONTROLS = {
-    usb_charging: {
-        titleKey: 'USB Charging', // Use a key for translation
-        path: '/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/usb_charging', // Path to the control
-        icon: 'drive-harddisk-usb-symbolic', // Icon name
-        indicator: true, // Indicator visibility
-    },
-    fn_lock: {
-        titleKey: 'Fn Lock',
-        path: '/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/fn_lock',
-        icon: 'input-keyboard-symbolic',
-        indicator: false,
-    },
-    conservation_mode: {
-        titleKey: 'Conservation',
-        path: '/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode',
-        icon: 'emoji-nature-symbolic',
-        indicator: true,
-    },
-};
+const CONTROLS = loadControls();
+
+function loadControls() {
+    // Need help fixing that defining extension path with better a way
+    const filePath = GLib.build_filenamev([`${GLib.get_current_dir()}/.local/share/gnome-shell/extensions/vantage-controls@oezturk.github.io`, 'controls.json']);
+
+    let [ok, contents] = GLib.file_get_contents(filePath);
+
+    if (!ok) {
+        logError(new Error(`Failed to read controls.json: ${contents}`));
+        return {};
+    }
+
+    try {
+        return JSON.parse(contents.toString()).controls;
+    } catch (e) {
+        logError(new Error(`Failed to parse controls.json: ${e}`));
+        return {};
+    }
+}
 
 function getState(controlType) {
     const path = CONTROLS[controlType].path;
@@ -87,7 +87,7 @@ class ControlToggle extends QuickToggle {
 
     onToggle() {
         setControl(this.controlType, this.checked); // Set the control based on the state
-        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, () => {
+        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 200, () => {
             this.checked = getState(this.controlType); // Refresh the checked state
             return GLib.SOURCE_REMOVE; // Remove the timeout
         });
