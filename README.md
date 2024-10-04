@@ -2,7 +2,9 @@
 
 ![Vantage Controls Logo](icons/qs-icon.svg)
 
-**⚠️ **Note: Vantage Controls is currently under development and is not functional at this time. Check back later for updates.** ⚠️**
+**⚠️ YOU NEED [ADDITIONAL SETUP](#additional-setup) TO USE CONTROLS ⚠️**
+
+Note: Vantage Controls is currently under development and is not functional at this time. Check back later for updates.
 
 ### A GNOME Shell Extension
 
@@ -46,6 +48,16 @@
 
 ---
 
+## Additional Setup
+
+1. Allow members of the sudo group to write to the ideapad_acpi driver files without a password.
+    ```bash
+    echo "%sudo ALL=(ALL) NOPASSWD: /usr/bin/tee /sys/bus/platform/drivers/ideapad_acpi/VPC????\:??/*" | sudo tee /etc/sudoers.d/vantage
+    ```
+    You can write your username or a %group instead of `%sudo`.
+
+---
+
 ## Screenshots
 
 ![Screenshot of Vantage Controls](images/screenshot.png)
@@ -54,8 +66,8 @@
 
 ## Compatibility
 
-- **GNOME Shell**: 43 or later
-- **Tested on**: GNOME 43
+- **GNOME Shell**: 45 or later
+- **Tested on**: GNOME 46
 
 ---
 
