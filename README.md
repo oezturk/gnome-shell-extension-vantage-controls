@@ -29,22 +29,17 @@ Note: Vantage Controls is currently under development and is not functional at t
     git clone https://github.com/oezturk/gnome-shell-extension-vantage-controls.git
     ```
 
-2. Navigate to the directory:
-    ```bash
-    cd gnome-shell-extension-vantage-controls
-    ```
-
-3. Copy the extension to your GNOME Shell extensions folder:
+2. Copy the extension to your GNOME Shell extensions folder:
     ```bash
     cp -r gnome-shell-extension-vantage-controls ~/.local/share/gnome-shell/extensions/vantage-controls@oezturk.github.io
     ```
+
+3. Restart GNOME Shell (press `Alt + F2`, then type `r` and press `Enter`) or log out and log back in.
 
 4. Enable the extension using GNOME Tweaks or from the command line:
     ```bash
     gnome-extensions enable vantage-controls@oezturk.github.io
     ```
-
-5. Restart GNOME Shell (press `Alt + F2`, then type `r` and press `Enter`) or log out and log back in.
 
 ---
 
